@@ -32,15 +32,22 @@ class Battery(Serviceable):
     pass
 
 
+class TireSet(Serviceable):
+    """An abstract tire set class."""
+    pass
+
+
 # Concrete classes:
 
 class Car(Serviceable):
     """A car."""
 
-    def __init__(self, engine, battery):
+    def __init__(self, engine, battery, tire_set):
         self._engine = engine
         self._battery = battery
+        self._tire_set = tire_set
 
     def needs_service(self) -> bool:
         return self._engine.needs_service() or \
-               self._battery.needs_service()
+               self._battery.needs_service() or \
+               self._tire_set.needs_service()
