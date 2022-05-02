@@ -14,20 +14,20 @@ from classes import TireSet
 class CarriganTires(TireSet):
     """A Carrigan tire set."""
 
-    def __init__(self, tire_wear):
-        self._tire_wear = wear
+    def __init__(self, tires_wear):
+        self._tires_wear = tires_wear
 
     def needs_service(self) -> bool:
         return any(
-            [wear_value >= 0.9 for wear_value in self._tire_wear]
+            [wear_value >= 0.9 for wear_value in self._tires_wear]
         )
 
 
 class OctoprimeTires(TireSet):
-    """A Carrigan tire set."""
+    """An Octoprime tire set."""
 
-    def __init__(self, tire_wear):
-        self._tire_wear = wear
+    def __init__(self, tires_wear):
+        self._tires_wear = tires_wear
 
     def needs_service(self) -> bool:
-        return sum(self._tire_wear) >= 3
+        return sum(self._tires_wear) >= 3
