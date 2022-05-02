@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Base classes for the purposes of Task 2 of Lyft's VE.
+Base classes for the purposes of Lyft's VE.
 
 Created on 01/May/2022 -- 22:48
 @author: Shipkaliev
