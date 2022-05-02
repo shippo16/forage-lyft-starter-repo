@@ -20,7 +20,7 @@ class SpindlerBattery(Battery):
         self._current_date = current_date
         self._last_service_date = last_service_date
 
-    def should_be_serviced(self):
+    def needs_service(self) -> bool:
         service_threshold = 365 * 2  # 2 years in days
         time_since_last_service = self._current_date - self._last_service_date  # type: datetime.timedelta
         return time_since_last_service.days > service_threshold
@@ -33,7 +33,7 @@ class NubbinBattery(Battery):
         self._current_date = current_date
         self._last_service_date = last_service_date
 
-    def should_be_serviced(self):
+    def needs_service(self) -> bool:
         service_threshold = 365 * 4  # 4 years in days
         time_since_last_service = self._current_date - self._last_service_date  # type: datetime.timedelta
         return time_since_last_service.days > service_threshold
