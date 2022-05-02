@@ -10,11 +10,13 @@ Created on 02/May/2022 -- 04:37
 
 from classes import TireSet
 
+from collections import Sequence
+
 
 class CarriganTires(TireSet):
     """A Carrigan tire set."""
 
-    def __init__(self, tires_wear):
+    def __init__(self, tires_wear: Sequence):
         self._tires_wear = tires_wear
 
     def needs_service(self) -> bool:
@@ -26,7 +28,7 @@ class CarriganTires(TireSet):
 class OctoprimeTires(TireSet):
     """An Octoprime tire set."""
 
-    def __init__(self, tires_wear):
+    def __init__(self, tires_wear: Sequence):
         self._tires_wear = tires_wear
 
     def needs_service(self) -> bool:
